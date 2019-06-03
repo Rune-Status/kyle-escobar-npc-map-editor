@@ -77,12 +77,43 @@
 
     <!-- If the browser does not support ES6 modules, load the bundled version -->
     <script nomodule defer src="js/bundle.js"></script>
+
+    <style>
+        .kyle-npc-add-box {
+            background:rgb(0,0,0);
+            width:70%;
+            height: 70%;
+            text-align:center;
+            border:1px solid white;
+            position:absolute;
+            top:15%;
+            left:15%;
+            z-index: 99999999;
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container-fluid" id="container">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="map-container">
-            <div id="map"></div>
+            <div class="kyle-npc-add-box" id="addNpcBox">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <h4>Add NPC</h4>
+                    <input id="npcid" type="text" class="form-control" placeholder="npcId"><br>
+                    <input id="walkradius" type="number" class="form-control" placeholder="Walk Radius"><br>
+                    <select id="npcdir" class="form-control">
+                        <option value="0">NORTH</option>
+                        <option value="1">EAST</option>
+                        <option value="2">SOUTH</option>
+                        <option value="3">WEST</option>
+                    </select><br>
+                    <button class="form-control btn btn-default" id="addBtn">ADD NPC</button><br>
+                    <button class="form-control btn btn-default" id="cancelBtn">Cancel</button>
+                </div>
+            </div>
+            <div id="map">
+            </div>
         </div>
         <div class="slide-panel" id="code-output-panel">
             <pre id="code-output-pre"><code id="code-output" contenteditable="true"></code></pre>
